@@ -58,8 +58,8 @@
       }
 
       #pano {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
       }
 
       .text {
@@ -198,6 +198,8 @@
           }
         });
 
+
+
         // Style the markers a bit. This will be our listing marker icon.
         var defaultIcon = makeMarkerIcon('0091ff');
 
@@ -261,6 +263,9 @@
           // Make sure the search is re-done if the poly is changed.
           polygon.getPath().addListener('set_at', searchWithinPolygon);
           polygon.getPath().addListener('insert_at', searchWithinPolygon);
+
+          var area = google.maps.geometry.spherical.computeArea(polygon.getPath());
+          window.alert(area + 'sqm');
         });
       }
 
@@ -371,7 +376,7 @@
 
     <script async defer
         src=
-        "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=MYAPIKEY&v=3&callback=initMap">
+        "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&key=AIzaSyA32vABX6bd38gkheIm3O4ocWekMfrfzu0&v=3&callback=initMap">
     </script>
 
   </body>
